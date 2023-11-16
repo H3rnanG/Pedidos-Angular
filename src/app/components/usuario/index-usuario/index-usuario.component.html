@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Direccion</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (usuario of data; track usuario.idUsuario) {
+      <tr>
+        <th scope="row">{{usuario.idUsuario}}</th>
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.correoElectronico}}</td>
+        <td>{{usuario.direccion}}</td>
+        <td>{{usuario.numeroTelefono}}</td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteUsuario(usuario.idUsuario)">Eliminar</button>
+          <button class="btn btn-info" >Editar</button>
+      </td>
+      </tr>
+    }
+  </tbody>
+</table>
